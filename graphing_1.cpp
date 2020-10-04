@@ -99,7 +99,17 @@ void values(int m)
 			 break;	
 	}		
 }
-
+void funInt()                      //accepts a polynomial function as a string and breaks it up in its components to find its value at a particular x
+{
+    string fun, *f=&fun;
+    float x;
+    cout<<"Enter the monovariable polynomial function with the degree of x (even of x\u00B9, but not of constant) just after x (eg, write x\u00B2 as x2) "<<endl;
+    cin>>fun;
+    for(int i=0;i<fun.size();i++)
+    {
+        fun.at(i)
+    }
+}
 void check()
 {
 	char x;
@@ -122,8 +132,9 @@ void check()
 }
 int main()
 {
-	int m=menu();
-        values(m);
-	check();
+	//int m=menu();
+    //values(m);
+	//check();
+    funInt();
 	return 0;
 }
