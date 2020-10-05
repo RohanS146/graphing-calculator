@@ -102,12 +102,25 @@ void values(int m)
 void funInt()                      //accepts a polynomial function as a string and breaks it up in its components to find its value at a particular x
 {
     string fun, *f=&fun;
-    float x;
-    cout<<"Enter the monovariable polynomial function with the degree of x (even of x\u00B9, but not of constant) just after x (eg, write x\u00B2 as x2) "<<endl;
+    float x,a[17];
+    int p;
+    cout<<"Enter the monovariable polynomial function with the degree of x (even of x\u00B9, but not in constant term) just after x and all coefficients with their sign (eg, write x\u00B2 as +1x2) "<<endl;
     cin>>fun;
     for(int i=0;i<fun.size();i++)
     {
-        fun.at(i)
+        if(fun.at(i)=='+')//||(fun.at(i-1)!=x&&fun.at(i+1)>=0&&fun.at(i+1)<10))                       //TRY TO REMOVE THIS CONDITION.... AND UNCOMMENT THE EXTRA LINE OF CODE
+            a[0]=1.2;
+        if(fun.at(i)=='-')
+            a[0]=-1.2;                                                                                //stores signs as + or -1.2.
+        int j=1;
+        while(fun.at(i+j)!='x'&&i+j<fun.size())
+        {
+            fun.at(i+j)=='.'?a[j]=1.1:a[j]=fun.at(i+j)-'0';            //to store decimal in case of decimal values, a[] stores 1.1 to denote decimal point
+            cout<<a[j]<<endl;
+            j++;
+        }
+        cout<<a[0]<<endl;
+        i=i+j-1;
     }
 }
 void check()
